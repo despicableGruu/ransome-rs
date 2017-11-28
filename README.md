@@ -31,4 +31,4 @@ Two components are required: a PHP server and a Go application.
 The program utilizes an asynchronous communication model between components.
 
 
-[Diagram](https://github.com/edfullest/Ransomware/blob/master/architecture.png)
+[Diagram](https://github.com/despicableGruu/ransome-rs/blob/master/architecture.png)
