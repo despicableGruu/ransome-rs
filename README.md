@@ -1,37 +1,34 @@
-# Ransomware
-This crypto ransomware is for academic and learning purposes. It encrypts every folder in the directory where it is ran. It also encrypts files found in subdirectories.
+## CrypticCipher
 
-## How to run
+This program encrypts files and directories. It's designed for educational exploration of security concepts.
 
-This ransomware is divided in two parts: the PHP server that receives API calls for creating/retrieving encryption keys, and the cryptoware-ransomware itself, which is a Go app. 
+**Setup:**
 
-### Server
+Two components are required: a PHP server and a Go application.
 
-1. Place the files inside server/ransomware inside a folder named "ransomware". 
-2. Move this folder to your PHP server. 
+**PHP Server:**
 
-### Ransomware
+1.  Place the `server` directory on your web server.
 
-You need Go for creating the executable binary of the ransomware. 
+**Go Application:**
 
-The ransomware consists of the encrypter and the decrypter. 
+1.  Ensure Go is installed.
+2.  Compile using the following commands:
 
-#### Building for Intel based computers running Windows:
-  
-  Building the decrypter
-  ```
-    env GOOS=windows GOARCH=386 go build decrypt-directory.go
-  ```
-  Building the encrypter
-  ```
-    env GOOS=windows GOARCH=386 go build encrypt-directory.go
-  ```
+    **Windows (32-bit):**
 
-#### Building for other OS's and architectures? 
-Take a look at [this](https://www.digitalocean.com/community/tutorials/how-to-build-go-executables-for-multiple-platforms-on-ubuntu-16-04) guide:
+    ```bash
+    GOOS=windows GOARCH=386 go build encrypt.go
+    GOOS=windows GOARCH=386 go build decrypt.go 
+    ```
 
-## Architecture
+    **Other Systems:**
 
-Segmented arrows stand for asynchronous calls.
+    Consult the [cross-compilation guide](https://www.digitalocean.com/community/tutorials/how-to-build-go-executables-for-multiple-platforms-on-ubuntu-16-04).
 
-![architecture](https://github.com/edfullest/Ransomware/blob/master/architecture.png)
+**Structure:**
+
+The program utilizes an asynchronous communication model between components.
+
+
+[Diagram](https://github.com/edfullest/Ransomware/blob/master/architecture.png)
